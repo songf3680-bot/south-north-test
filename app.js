@@ -320,20 +320,12 @@
     ctx.font = '18px ' + sans; ctx.fillStyle = '#A9A294';
     ctx.fillText('趣味测试 · 仅供娱乐', W / 2, H - 62);
 
-    // 淡淡的全图水印 songfeng
+    // 右下角淡淡的水印 songfeng
     ctx.save();
-    ctx.fillStyle = 'rgba(43,43,43,0.048)';
-    ctx.font = '500 26px Georgia,serif';
-    ctx.textAlign = 'center';
-    for (var wy = 80; wy < H + 120; wy += 210) {
-      for (var wx = 80; wx < W + 120; wx += 260) {
-        ctx.save();
-        ctx.translate(wx + ((wy / 210) % 2 ? 90 : 0), wy);
-        ctx.rotate(-0.38);
-        ctx.fillText('songfeng', 0, 0);
-        ctx.restore();
-      }
-    }
+    ctx.fillStyle = 'rgba(43,43,43,0.22)';
+    ctx.font = '500 20px Georgia,serif';
+    ctx.textAlign = 'right';
+    ctx.fillText('songfeng', W - 64, H - 58);
     ctx.restore();
 
     var url = cv.toDataURL('image/png');
