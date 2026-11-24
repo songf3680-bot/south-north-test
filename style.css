@@ -33,6 +33,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ============ 背景装饰 ============ */
 .bg-deco { position: fixed; inset: 0; pointer-events: none; z-index: 0; }
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='150'%3E%3Ctext x='110' y='80' text-anchor='middle' font-family='Georgia,serif' font-size='16' letter-spacing='3' fill='%232B2B2B' fill-opacity='0.05' transform='rotate(-22 110 75)'%3Esongfeng%3C/text%3E%3C/svg%3E");
+  background-repeat: repeat;
+}
 .mountains { position: absolute; bottom: 0; left: 0; width: 100%; height: 34vh; }
 .sun {
   position: absolute; top: 9vh; right: 9vw; width: 120px; height: 120px; border-radius: 50%;
