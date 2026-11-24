@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#F4EFE6" />
+  <meta name="description" content="40道生活化小题，测测你骨子里是南方还是北方人格，匹配你的灵魂城市。" />
+  <title>测测你骨子里是南方还是北方人格</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- 背景装饰：远山 -->
+  <div class="bg-deco" aria-hidden="true">
+    <svg class="mountains" viewBox="0 0 1200 300" preserveAspectRatio="none">
+      <path d="M0 220 Q120 140 240 190 T480 170 T720 200 T960 150 T1200 190 V300 H0Z" fill="#2E4A62" opacity=".08"/>
+      <path d="M0 250 Q150 190 300 230 T600 220 T900 240 T1200 215 V300 H0Z" fill="#4C7A6B" opacity=".10"/>
+      <path d="M0 275 Q200 245 400 265 T800 260 T1200 270 V300 H0Z" fill="#2B2B2B" opacity=".06"/>
+    </svg>
+    <div class="sun"></div>
+  </div>
+
+  <main id="app">
+    <!-- ========== 首页 ========== -->
+    <section id="home" class="screen active">
+      <div class="home-inner">
+        <div class="seal-pair" aria-hidden="true">
+          <span class="seal seal-n">北</span><span class="seal seal-s">南</span>
+        </div>
+        <p class="eyebrow">秦岭 · 淮河 · 一线之隔</p>
+        <h1 class="home-title">测测你骨子里<br/>是<em class="t-s">南方</em>还是<em class="t-n">北方</em>人格</h1>
+        <p class="home-sub">豆腐脑吃甜还是咸？冬天靠暖气还是靠正气？<br/>四十道生活小题，找到你灵魂深处的那座城。</p>
+        <ul class="home-meta">
+          <li><b>40</b><span>道趣味题</span></li>
+          <li><b>20</b><span>座灵魂城市</span></li>
+          <li><b>5</b><span>分钟左右</span></li>
+        </ul>
+        <button id="startBtn" class="btn btn-primary">开始测试</button>
+        <p class="disclaimer">仅供娱乐 · 不是地理考试，也不是心理诊断</p>
+      </div>
+    </section>
+
+    <!-- ========== 答题页 ========== -->
+    <section id="quiz" class="screen">
+      <header class="quiz-head">
+        <button id="backBtn" class="icon-btn" aria-label="上一题">
+          <svg viewBox="0 0 24 24" width="22" height="22"><path d="M15 5l-7 7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+        <div class="progress-wrap">
+          <div class="progress-info">
+            <span id="catTag" class="cat-tag">日常习惯</span>
+            <span class="progress-num"><b id="qNum">1</b> / <span id="qTotal">40</span></span>
+          </div>
+          <div class="progress"><div id="progressBar" class="progress-bar"></div></div>
+        </div>
+      </header>
+      <div class="card-stage">
+        <article id="qCard" class="q-card">
+          <div class="q-index" id="qIndex">壹</div>
+          <h2 id="qText" class="q-text"></h2>
+          <div id="options" class="options" role="list"></div>
+        </article>
+      </div>
+      <p class="quiz-tip">凭第一直觉选择即可 · 可按键盘 1-4 快速作答</p>
+    </section>
+
+    <!-- ========== 计算中 ========== -->
+    <section id="loading" class="screen">
+      <div class="loading-inner">
+        <div class="compass" aria-hidden="true">
+          <div class="compass-ring"></div>
+          <div class="compass-needle"></div>
+          <span class="dir dir-n">北</span><span class="dir dir-s">南</span>
+          <span class="dir dir-e">东</span><span class="dir dir-w">西</span>
+        </div>
+        <p id="loadingText" class="loading-text">正在测算你的南北基因……</p>
+      </div>
+    </section>
+
+    <!-- ========== 结果页 ========== -->
+    <section id="result" class="screen">
+      <div class="result-wrap">
+        <article id="resultCard" class="result-card"></article>
+        <div class="result-actions">
+          <button id="posterBtn" class="btn btn-primary">生成分享图</button>
+          <button id="retryBtn" class="btn btn-ghost">重新测试</button>
+        </div>
+        <p class="share-tip">截图或生成分享图，发到小红书 / 朋友圈，看看你的朋友是哪座城</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- 分享图弹窗 -->
+  <div id="posterModal" class="modal" aria-hidden="true">
+    <div class="modal-mask" data-close></div>
+    <div class="modal-body">
+      <img id="posterImg" alt="分享图" />
+      <p class="modal-tip">手机长按图片保存 · 电脑点击下方按钮下载</p>
+      <div class="modal-actions">
+        <a id="posterDownload" class="btn btn-primary" download="我的南北人格.png">下载图片</a>
+        <button class="btn btn-ghost" data-close>关闭</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="data.js"></script>
+  <script src="scoring.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
